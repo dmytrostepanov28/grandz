@@ -1,3 +1,7 @@
+{% for product in collections[section.settings.collection_feat].products %}
+  {% assign productId = productId | append: product.id | append: ',' %}
+{% endfor %}
+
 <section class="section">
   <div class="container featured">
     <div class="featured__title">{{ section.settings.featured_title }}</div>
@@ -7,11 +11,20 @@
           {% render 'product-cart', product: product %}
         </div>
       {% endfor %}
-
       {% for block in section.blocks %}
-        <div class="featured__item product" data-product-id="{{block.settings.product_item.id}}">
-          {% render 'product-cart', product: block.settings.product_item %}
-        </div>
+        {% for item in productId %}
+          {% if item contains block.settings.product_item.id %}
+            {% assign isPresent = true %}
+          {% else %}
+            {% assign isPresent = false %}
+          {% endif %}
+        {% endfor %}
+        {% unless isPresent == true %}
+          {% assign productId = productId | append: block.settings.product_item.id %}
+          <div class="featured__item product" data-product-id="{{block.settings.product_item.id}}">
+            {% render 'product-cart', product: block.settings.product_item %}
+          </div>
+        {% endunless %}
       {% endfor %}
     </div>
   </div>
@@ -19,7 +32,7 @@
 
 {% schema %}
   {
-    "name": "Products section",
+    "name": "Product section",
     "settings": [
       {
         "type": "collection",
@@ -47,7 +60,7 @@
     ],
     "presets": [
       {
-        "name": "Products section"
+        "name": "Product section"
       }
     ]
   }
