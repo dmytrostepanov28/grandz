@@ -28,11 +28,6 @@
       "settings": {
       }
     },
-    "e9c4834b-4567-4a1c-8650-a16dcbff1a63": {
-      "type": "cart-template",
-      "settings": {
-      }
-    },
     "97f66a67-8a5b-4de2-8e37-75f77ad3f570": {
       "type": "featured-products",
       "blocks": {
@@ -69,7 +64,6 @@
   "order": [
     "cart-items",
     "cart-footer",
-    "e9c4834b-4567-4a1c-8650-a16dcbff1a63",
     "97f66a67-8a5b-4de2-8e37-75f77ad3f570"
   ]
 }
