@@ -90,7 +90,7 @@
   -moz-appearance: none;
   appearance: none;
   position: relative;
-  background-image: url(arrow.svg);
+  background-image: url(Vector.svg);
   background-repeat: no-repeat;
   background-position: 85% 55%;
 }
