@@ -1,0 +1,132 @@
+.product {
+  &__image {
+    position: relative;
+    max-width: 520px;
+    width: 100%;
+    @include media($mobile) {
+      margin: 0 auto;
+    }
+    &::before {
+      content: "";
+      display: block;
+      padding-top: 65.4%;
+    }
+    .image__variant,
+    .image__product {
+      position: absolute;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      display: none;
+      animation: opacity 0.5s;
+      &.active {
+        display: block;
+        opacity: 1;
+      }
+    }
+    .image__product {
+      display: block;
+    }
+  }
+  &__info {
+    padding: 30px 15px 0;
+    .main-form {
+      .select-none {
+        display: none;
+      }
+      .quantity {
+        display: none;
+      }
+    }
+  }
+  &__title {
+    text-align: center;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 42px;
+    color: $color-1;
+    padding-bottom: 10px;
+  }
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    .variant_select {
+      font-family: $beausite;
+      font-size: 16px;
+      background: $color-4;
+      box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.11);
+      border-radius: 40px;
+      padding: 11px 40px 11px 20px;
+      border: none;
+      color: $color-3;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      position: relative;
+      background-image: url("../assets/arrow.svg");
+      background-repeat: no-repeat;
+      background-position: 85% 55%;
+      &:focus-visible {
+        border: none;
+        outline: none;
+      }
+    }
+    .just_one {
+      background: rgb(27%, 29%, 56%, 0.1);
+      border-radius: 40px;
+      color: $color-3;
+      padding: 7px 21px;
+      font-size: 14px;
+      line-height: 26px;
+      font-weight: 500;
+      display: block;
+    }
+  }
+  &__discount {
+    background: rgb(92%, 34%, 34%, 0.1);
+    border-radius: 30px;
+    padding: 7px 14px;
+    margin-left: 10px;
+    line-height: 1;
+    .discount {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 26px;
+      color: $color-2;
+    }
+  }
+  &__button {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background: $color-3;
+    border: 1px solid $color-3;
+    border-radius: 40px;
+    padding: 19px 76px;
+    margin: 0 auto;
+    color: #fff;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 500;
+    font-family: $beausite;
+    .price__variant {
+      display: none;
+      &.active {
+        display: block;
+      }
+    }
+  }
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

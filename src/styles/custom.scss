@@ -1,0 +1,26 @@
+// GLOBAL
+@import "./global/reset.scss";
+@import "./global/variables.scss";
+@import "./global/mixins.scss";
+@import "./global/fonts.scss";
+
+@import "./sections/product-cart.scss";
+@import "./sections/featured-product.scss";
+
+// LIBS
+@import "@fancyapps/fancybox";
+
+body {
+  &.gradient {
+    -webkit-font-smoothing: antialiased;
+    font-family: $beausite;
+    font-weight: 400;
+  }
+}
+
+.container {
+  max-width: 1110px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 15px;
+}

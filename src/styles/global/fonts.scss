@@ -1,0 +1,24 @@
+@font-face {
+  font-family: "Helvetica";
+  src: url("./fonts/HelveticaNeue.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Beausite";
+  src: url("./fonts/BeausiteClassicRegular.woff2") format("woff2"),
+    url("./fonts/BeausiteClassicRegular.eot") format("eot"),
+    url("./fonts/BeausiteClassicRegular.woff") format("woff"),
+    url("./fonts/BeausiteClassicRegular.ttf") format("ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Beausite";
+  src: url("./fonts/BeausiteClassic-Medium.ttf") format("ttf"),
+    url("./fonts/BeausiteClassic-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}

@@ -1,0 +1,54 @@
+
+{% if product != blank %}
+    <div class="product__image">
+        {% if product.variants.size > 1 %}
+            {% for variant in product.variants %}
+                <img class="image__variant{% if forloop.index == 1 %} active{% endif %}" data-variant-id="{{variant.id}}" src="{{variant.image | img_url: 'master'}}" alt="">
+            {% endfor %}
+            {% else %}
+                <img class="image__product" src="{{product.featured_image | img_url: 'master'}}" alt="">
+        {% endif %}
+    </div>
+    <div class="product__info">
+        <div class="product__title">
+            <span class="title">{{product.title}}</span>
+        </div>
+        <div class="product__content">
+            <div class="variants__title">
+                {% if product.variants.size > 1 %}
+                    <select class="variant_select" name="variant_select" data-product-id="{{product.id}}">
+                        {% for variant in product.variants %}
+                            <option class="variant__title" value="{{variant.id}}">{{variant.title}}</option>
+                        {% endfor %}
+                    </select>
+                {% else %}
+                    <span class="just_one">Just once</span>
+                {% endif %}
+            </div>
+            {% for tag in product.tags %}
+                <div class="product__discount">
+                    {% if tag contains "discount" %}
+                        <span class="discount">{{tag | split: ':' | last }}</span>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+        {% form "product", product, class: 'main-form'%}
+            <select name="id" class="select-none">
+                {% for variant in product.variants %}
+                    <option class="select-option" value="{{variant.id}}">{{variant.title}}
+                    </option>
+                {% endfor %}
+            </select>
+            <input type="number" class="quantity" name="quantity" value="1" min="1">
+            <button type="submit" class="product__button">
+                <span class="text">Add to cart -&nbsp;</span>
+                <div class="prices">
+                {% for variant in product.variants %}
+                    <span class="price__variant{% if forloop.index == 1 %} active{% endif %}" data-variant-id="{{variant.id}}"> {{variant.price | money}}</span>
+                {% endfor %}
+                </div>
+            </button>
+        {% endform %}
+    </div>
+{% endif %}
