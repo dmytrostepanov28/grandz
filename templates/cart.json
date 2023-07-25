@@ -27,10 +27,49 @@
       ],
       "settings": {
       }
+    },
+    "e9c4834b-4567-4a1c-8650-a16dcbff1a63": {
+      "type": "cart-template",
+      "settings": {
+      }
+    },
+    "97f66a67-8a5b-4de2-8e37-75f77ad3f570": {
+      "type": "featured-products",
+      "blocks": {
+        "3e536631-f2ca-4515-bcdb-ba581acb212a": {
+          "type": "product",
+          "settings": {
+            "product_item": "eye-stick-3-pack"
+          }
+        },
+        "3a141fe2-a2a2-438c-b384-932c36ef04a6": {
+          "type": "product",
+          "settings": {
+            "product_item": "eye-stick-3-pack"
+          }
+        },
+        "08e6862e-0369-413d-b700-fc2ed98c950e": {
+          "type": "product",
+          "settings": {
+            "product_item": "eye-stick-3-pack"
+          }
+        }
+      },
+      "block_order": [
+        "3e536631-f2ca-4515-bcdb-ba581acb212a",
+        "3a141fe2-a2a2-438c-b384-932c36ef04a6",
+        "08e6862e-0369-413d-b700-fc2ed98c950e"
+      ],
+      "settings": {
+        "collection_feat": "",
+        "featured_title": "Featured Products"
+      }
     }
   },
   "order": [
     "cart-items",
-    "cart-footer"
+    "cart-footer",
+    "e9c4834b-4567-4a1c-8650-a16dcbff1a63",
+    "97f66a67-8a5b-4de2-8e37-75f77ad3f570"
   ]
 }
