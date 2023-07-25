@@ -31,36 +31,37 @@
 </section>
 
 {% schema %}
-{
-  "name": "Products section",
-  "settings": [
-    {
-      "type": "collection",
-      "id": "collection_feat",
-      "label": "Collection"
-    },
-    {
-      "type": "text",
-      "id": "featured_title",
-      "label": "Featured title",
-      "default": "Featured Products"
-    }
-  ],
-  "blocks": [
-    {
-      "name": "Product item",
-      "type": "product",
-      "settings": [
-        {
-          "type": "product",
-          "id": "product_item",
-          "label": "Product"
-        }
-      ]
-    }
-  ],
-  "presets": {
-    "name": "Products section"
+  {
+    "name": "Products section",
+    "settings": [
+      {
+        "type": "collection",
+        "id": "collection_feat",
+        "label": "Collection"
+      }, {
+        "type": "text",
+        "id": "featured_title",
+        "label": "Featured title",
+        "default": "Featured Products"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Product item",
+        "type": "product",
+        "settings": [
+          {
+            "type": "product",
+            "id": "product_item",
+            "label": "Product"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Products section"
+      }
+    ]
   }
-}
 {% endschema %}

@@ -5,9 +5,12 @@
         class="page-width"
         data-section-id="{{ section.id }}"
         data-section-type="cart-template"
-        data-ajax-enabled="{{ section.settings.cart_ajax_enable }}"
-      >
-        <form action="/cart" method="post" novalidate class="cart form-cart">
+        data-ajax-enabled="{{ section.settings.cart_ajax_enable }}"></div>
+        <form
+          action="/cart"
+          method="post"
+          novalidate
+          class="cart form-cart">
           <div class="cart-wrapper">
             <div class="cart-items__wrapper">
               <div class="cart-items">
@@ -36,7 +39,8 @@
                         <span class="quantity" rv-text="item.quantity"></span>
                       </div>
                       <p class="cart-item__remove">
-                        <a href="#" rv-data-cart-remove="index | plus 1"> remove</a>
+                        <a href="#" rv-data-cart-remove="index | plus 1">
+                          remove</a>
                       </p>
                     </div>
                     <div class="cart-item__total">
@@ -54,10 +58,13 @@
 </section>
 
 {% schema %}
-{
-  "name": "Cart page section",
-  "presets": {
-    "name": "Cart page section"
+  {
+    "name": "Cart page section",
+    "settings": [],
+    "presets": [
+      {
+        "name": "Cart page section"
+      }
+    ]
   }
-}
 {% endschema %}
